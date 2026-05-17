@@ -50,16 +50,15 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build Shared Framework
-        run: ./gradlew :composeApp:assembleReleaseAppleFrameworkForXcode
-
       - name: Build iOS App (Simulator)
         run: |
           xcodebuild -project iosApp/iosApp.xcodeproj \
             -scheme iosApp \
             -configuration Release \
             -sdk iphonesimulator \
-            -derivedDataPath build-xcode
+            -derivedDataPath build-xcode \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
 
       - name: Upload iOS App (.app)
         uses: actions/upload-artifact@v4
