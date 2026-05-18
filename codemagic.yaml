@@ -14,12 +14,9 @@ workflows:
       - name: Set up local.properties
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-      - name: Build Shared Framework
-        script: |
-          chmod +x gradlew
-          ./gradlew :composeApp:assembleReleaseAppleFrameworkForXcode
       - name: Build iOS App
         script: |
+          chmod +x gradlew
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
             --scheme "$XCODE_SCHEME" \
