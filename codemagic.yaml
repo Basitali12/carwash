@@ -28,7 +28,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - YOUR_EMAIL_HERE # Update this in your file or Codemagic settings
+          - justbasitali@gmail.com # Replace with your real email address
         notify:
           success: true
           failure: true
