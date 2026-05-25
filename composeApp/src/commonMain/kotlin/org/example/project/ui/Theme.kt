@@ -6,29 +6,29 @@ import androidx.compose.material3.Typography
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.graphics.Color
 
 private val LightColorScheme = lightColorScheme(
-    primary = BluePrimary,
-    onPrimary = androidx.compose.ui.graphics.Color.White,
-    primaryContainer = BlueLight,
-    onPrimaryContainer = BlueDark,
-    secondary = BlueDark,
-    onSecondary = androidx.compose.ui.graphics.Color.White,
-    background = BackgroundLight,
-    surface = androidx.compose.ui.graphics.Color.White,
-    onBackground = TextDark,
-    onSurface = TextDark,
+    primary = BrandPrimary,
+    onPrimary = Color.White,
+    primaryContainer = BrandLight,
+    onPrimaryContainer = BrandDark,
+    secondary = BrandMid,
+    onSecondary = Color.White,
+    background = BackgroundColor,
+    surface = SurfaceColor,
+    onBackground = TextPrimary,
+    onSurface = TextPrimary,
     error = ErrorRed
 )
 
 val AppTypography = Typography(
     headlineLarge = TextStyle(
-        fontWeight = FontWeight.Bold,
-        fontSize = 22.sp,
-        letterSpacing = 0.sp
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 28.sp,
+        letterSpacing = (-0.02).sp
     ),
     titleLarge = TextStyle(
         fontWeight = FontWeight.SemiBold,
@@ -44,7 +44,7 @@ val AppTypography = Typography(
         fontWeight = FontWeight.Medium,
         fontSize = 12.sp,
         letterSpacing = 0.5.sp,
-        color = TextGray
+        color = TextSecondary
     )
 )
 
@@ -53,7 +53,6 @@ fun WashProTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    // For now we use light theme as per prototype
     MaterialTheme(
         colorScheme = LightColorScheme,
         typography = AppTypography,
